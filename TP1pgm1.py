@@ -4,10 +4,10 @@ def getCurrency(currency):
     try:
         for i in currencies:
             if i.nom == currency:
-                deviseObj = i
+                print("Achado")
                 break
-            else:
-                print("Currency not found.")
+            # verificar forma de alertar caso nao haja aquele nome na lista
+        return i
     except:
         print("Error!")
 
@@ -21,7 +21,13 @@ while True:
     print("Choose a currency in the list below: ")
     for i in currencies: i.afficherNom()
     choisi = str(input("-> "))
-    deviseObj = getCurrency(choisi)
+    deviseObj = getCurrency(choisi) # função devolve objeto de nome armazenado em choisi
+    valueFrom = float(input("Value to convert: " )) # valor de origem para converter
+    valueEuro = Prix(valueFrom, deviseObj) # devolve valor de saída
+    if (input("Another consult? (Y/n): ") in ('Y', 'y') ):
+        print('\n')
+    else: break
+
 
 
 

@@ -4,8 +4,8 @@ def getCurrency(currency):
     try:
         for i in currencies:
             if i.nom == currency:
+                deviseObj = i
                 break
-                return i
             else:
                 print("Currency not found.")
     except:
@@ -17,7 +17,6 @@ currencies.append( Devise("Real", "R$", "BRL", "Brésil", 5.4899) )
 currencies.append( Devise("Dolar", "$", "USS", "USA", 1.0897) )
 currencies.append( Devise("Franc", "F", "CHF", "Swiss", 1.0080) )
 
-print("currencies", currencies)
 while True:
     print("Choose a currency in the list below: ")
     for i in currencies: i.afficherNom()
